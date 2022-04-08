@@ -1,8 +1,18 @@
-import './style.css'
+import { createCounter } from "./counter";
+import "./style.css";
+import { createElement } from "./utils";
 
-const app = document.querySelector<HTMLDivElement>('#app')!
+const app = document.querySelector<HTMLDivElement>("#app")!;
 
-app.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+const title = createElement("h1", "Virtual Hand Counter");
+app.appendChild(title);
+
+app.appendChild(createCounter());
+app.appendChild(createCounter());
+app.appendChild(createCounter());
+
+const button = createElement("button", "Add counter");
+button.addEventListener("click", () => {
+  app.insertBefore(createCounter(), button);
+});
+app.appendChild(button);
