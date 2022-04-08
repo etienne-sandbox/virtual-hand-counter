@@ -10,5 +10,9 @@
   "devDependencies": {
     "typescript": "^4.5.4",
     "vite": "^2.9.0"
+  },
+  "dependencies": {
+    "@types/canvas-confetti": "^1.4.2",
+    "canvas-confetti": "^1.5.1"
   }
 }

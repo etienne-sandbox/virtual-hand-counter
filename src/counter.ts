@@ -1,4 +1,5 @@
 import { createElement } from "./utils";
+import confetti from "canvas-confetti";
 
 export function createCounter() {
   const counter = createElement("div");
@@ -19,6 +20,9 @@ export function createCounter() {
   const counterIncrement = createElement("button", "+");
   counterIncrement.addEventListener("click", () => {
     counterValue.innerText = String(parseInt(counterValue.innerText, 10) + 1);
+    if (counterValue.innerText === "10") {
+      confetti();
+    }
   });
   counter.appendChild(counterIncrement);
 
