@@ -2,7 +2,7 @@ import { createCounter } from "./counter";
 import "./style.css";
 import { createElement } from "./utils";
 
-const app = document.querySelector<HTMLDivElement>("#app")!;
+const app = document.querySelector("#app");
 
 const title = createElement("h1", "Virtual Hand Counter");
 app.appendChild(title);
